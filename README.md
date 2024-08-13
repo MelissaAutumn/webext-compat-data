@@ -8,12 +8,19 @@ repository (a.k.a. BCD).
 The following files are provided:
  - `thunderbird_mailextensions.json` : The webextension data from BCD, but with
     additional entries for Thunderbird, including Thunderbird's MailExtension APIs.
- - `thunderbird_compat_data.js` : A module to load the full BCD including the
-    information from `thunderbird_mailextensions.json`. It is a drop-in replacement
-    for the BCD module:
-    ```
-    const bcd = require("./thunderbird_compat_data.js");
-    ```  
+- `thunderbird_compat_data.js` : A module to load the full BCD including the
+   information from `thunderbird_mailextensions.json`. It is a drop-in replacement
+   for the BCD module:
+
+``` javascript
+// With CommonJS
+const bcd = require("@thunderbirdops/thunderbird_compat_data.js");
+
+// -or-
+
+// With ESM
+import thunderbird_compat_data from '@thunderbirdops/webext-compat-data';
+```  
 
 Work in progress - missing features
 ===================================
@@ -48,7 +55,7 @@ Install needed packages
 =======================
 
 ```
-npm install comment-json fs-extra yargs path extract-zip @mdn/browser-compat-data
+npm install
 ```
 
 Usage
